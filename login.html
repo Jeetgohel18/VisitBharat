@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link href="css/login.css" rel="stylesheet">
+    </head>
+    <body><style>
+		.my-textbox{
+			width:270px;
+			height: 20px;
+			outline: none;
+			 border: none;
+			 border-color: transparent;
+			 border-bottom: 1px solid black;
+		}
+	</style>
+        <div class="hero">
+            <div class="form">
+            	<div class="button">
+            		<div id="btn"></div>
+            		<button type="button" class="toggle-btn" onclick="login()">Login</button>
+                    
+            		<button type="button" class="toggle-btn" onclick="register()">Register</button>            			
+            	</div>
+            	<div class="social">
+        	<!-- Facebook -->
+            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=159513024983374&kid_directed_site=0&app_id=159513024983374&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fscope%3Dpublic_profile%2Bemail%2Bopenid%26state%3D0KLaq5lssYSsAU-0FYuZOesW8-zlqT7jeKs6hQm_rw4.FIqfny-9HF4.icc-sso-web%26response_type%3Dcode%26client_id%3D159513024983374%26redirect_uri%3Dhttps%253A%252F%252Fsso.fanaccount.icc-cricket.com%252Fauth%252Frealms%252FICC%252Fbroker%252Ffacebook%252Fendpoint%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D0013271b-307a-4fc3-9528-b7a01ca89626%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fsso.fanaccount.icc-cricket.com%2Fauth%2Frealms%2FICC%2Fbroker%2Ffacebook%2Fendpoint%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D0KLaq5lssYSsAU-0FYuZOesW8-zlqT7jeKs6hQm_rw4.FIqfny-9HF4.icc-sso-web%23_%3D_&display=page&locale=en_GB&pl_dbl=0"><img src="img/facebook.svg"></a>
+            <!-- Twitter -->
+        	<a href="https://twitter.com/i/flow/login"><img src="img/twitter-x.svg"></a>
+            <!-- Google -->
+        	<a href="https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-921736330%3A1694698723613421&client_id=844310787835-1rirg6e5plp2jou6v701br43iuo0lkcu.apps.googleusercontent.com&nonce=Vi9XZ8Y-270muwFtqr230g&o2v=2&redirect_uri=https%3A%2F%2Fsso.fanaccount.icc-cricket.com%2Fauth%2Frealms%2FICC%2Fbroker%2Fgoogle%2Fendpoint&response_type=code&scope=openid+profile+email&service=lso&state=FPm8uAFrjvgvVvrYaOvIykcs6RLGSdwocL1lEpRhIFE.r07yyhbasyQ.icc-sso-web&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAM1P_VtX_YMg6JJUJK56QKhkDDRjx47I2LuXcJ6x_5kMHGXUYmIIs54fLThs8KFv3Y9H0xTFgpDWlxKJKnL5PjFYWrMV6gs7hDawRfExbYmjfMX2ZCJMArIZDjXgee5VE6_Co5i0wjKiw1alHAv90mQYVbWsTiy-GTNOuQmpjhQvIgPaEUoeoTWhCzrZRuixqfS0UU3JXUqSJeXwxFwUSTYawx3LqZXmKWWZ7r5NjHBQzIYdhz5IxJoDLbH_YoSWYhx3M-QjWzSA04takeWII5y08MqToWZRNvVlKh3r8f7A1lGFigpeWPAGm1Rp87mi2lR5DOsXBj3K1V7u6q8nTC9QoJ9TYfBIvVnbRckj_YOT0V77ABSoeHAtQ1vkTSyHP4KcaKiTjwDEzh5ppxdNWIAIp_ES5-4uDZQgv8R_qMHFBSHjgtB2eesY2jIYihAFS4ovMvzd3viylR7b0cleDo2k7eAigZ1lin03Pfuqv9LLP1s3QE%26as%3DS-921736330%253A1694698723613421%26client_id%3D844310787835-1rirg6e5plp2jou6v701br43iuo0lkcu.apps.googleusercontent.com%23&app_domain=https%3A%2F%2Fsso.fanaccount.icc-cricket.com&rart=ANgoxccGh0e_LhNduTIxFMJjmiOpCQsCCAtEXoOllYdonlkgJqBk6XMpg77xVD-tLrkGHbn5036jGAB80TXYaBdTP6Z5vNfzgg"><img src="img/google.svg"></a>
+        </div>
+		<form id="login" class="input" action="login.php" method="post">
+			<label>Username</label>
+			<center><input type="text" name="Username" class="my-textbox"></center><br>
+			<label>Password</label>
+			<center><input type="Password" name="Password" class="my-textbox" required></center><br>
+			
+			<button type="submit" class="submit">Login</button>
+		</form>
+		<form id="register" class="input" action="signup.php" method="post">
+			<label>Username</label><br>
+			<input type="text"  name="Username" class="my-textbox" required><br><br>
+			<label>Email</label><br><input type="text"  name="email"class="my-textbox" required><br><br>
+			<label>Password</label><br><input type="Password"  name="Password" class="my-textbox" required><br><br>
+			
+			<button type="submit" class="submit">Register</button>
+		</form>
+	  	</div>
+            
+        </div>
+        <script>
+        	var x = document.getElementById("login");
+        	var y = document.getElementById("register");
+        	var z = document.getElementById("btn");
+        	 function register(){
+
+        	 	x.style.left ="-400px";
+        	 	y.style.left ="50px";
+        	 	z.style.left ="110px";
+        	 }
+        	 function login(){
+
+        	 	x.style.left ="50px";
+        	 	y.style.left ="450px";
+        	 	z.style.left ="0px";
+        	 }
+        </script>
+        
+
+    </body>
+</html>
